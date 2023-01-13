@@ -17,7 +17,6 @@ class Hotel {
                     std::cout << "Room Number: " << room.id << "\n";
                     std::cout << "Room Name: " << room.name << "\n";
                     std::cout << "Room Price: " << room.pricePerDay << "$" << "\n";
-                    std::cout << "Room A: " << room.isAvailable << "\n";
                     std::cout << "-----------------" << "\n";
                 }
             }
@@ -25,13 +24,13 @@ class Hotel {
 
         void rentRoom(int roomNumber, int days, std::vector<hotelRoom> & availableRooms){
             float price;
-           for(hotelRoom &room : availableRooms){
-               if (room.id == roomNumber){
-                    room.isAvailable = false;
-                    price = room.pricePerDay;
-               }
-           }
-           std::cout << "You are going to pay " << price * days << "$" << "\n";
+            for(hotelRoom &room : availableRooms){
+                if (room.id == roomNumber){
+                     room.isAvailable = false;
+                     price = room.pricePerDay;
+                }
+            }
+            std::cout << "You are going to pay " << price * days << "$" << "\n";
         }
 };
 
